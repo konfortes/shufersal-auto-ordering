@@ -17,7 +17,7 @@ const password = process.env.PASSWORD || ''
         const afterLoginPage = await login(page, user, password)
         await afterLoginPage.click('a.btnContinue')
         await afterLoginPage.waitFor('#secondMenu1')
-        const fruitsVagetablesPage = await navigateCategory(afterLoginPage, Category.FruitsAndVegetables)
+        const fruitsPage = await navigateCategory(afterLoginPage, Category.Fruits)
     } catch (error) {
     } finally {
         browser.close()
