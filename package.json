@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./dist/index.js",
-    "start:dev": "nodemon -e ts --exec 'ts-node --files ./index.ts",
+    "start:dev": "nodemon -e ts --exec 'ts-node --files ./src/index.ts'",
     "build": "tsc",
     "test": "npm t",
     "lint": "eslint --fix . --ext .ts"
@@ -27,9 +27,12 @@
   },
   "homepage": "https://github.com/konfortes/ts-boilerplate#readme",
   "devDependencies": {
+    "@types/puppeteer": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
     "cross-env": "^7.0.0",
+    "dot-env": "0.0.1",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.10.0",
@@ -47,5 +50,8 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
+  },
+  "dependencies": {
+    "puppeteer": "^2.1.1"
   }
 }
