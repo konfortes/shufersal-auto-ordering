@@ -1,9 +1,6 @@
 import { Page } from 'puppeteer'
+import { Category } from './category'
 
-export enum Category {
-    Fruits = 'fruits',
-    Vegetables = 'vegetables',
-}
 const fruitsAndVegetables = 'פירות, ירקות ופיצוחים'
 
 // TODO: better name

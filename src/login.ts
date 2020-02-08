@@ -9,7 +9,7 @@ export const login = async (page: Page, user: string, password: string): Promise
         await page.waitFor('a.btnContinue')
         return page
     } catch (error) {
-        console.log(`error login. ${error}`)
+        console.error(`error login. ${error}`)
         throw error
     }
 }
