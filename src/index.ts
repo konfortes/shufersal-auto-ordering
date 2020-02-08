@@ -1,6 +1,8 @@
 require('dotenv').config()
 import { login } from './login'
-import { navigateCategory, Category } from './navigate-category'
+import { navigateCategory } from './navigate-category'
+import { listProducts } from './list-products'
+import { Category } from './category'
 import { default as puppeteer, Browser } from 'puppeteer'
 const ADDRESS = 'https://www.shufersal.co.il/online/'
 const DEBUG = process.env.NODE_ENV == 'development'
@@ -17,8 +19,11 @@ const password = process.env.PASSWORD || ''
         const afterLoginPage = await login(page, user, password)
         await afterLoginPage.click('a.btnContinue')
         await afterLoginPage.waitFor('#secondMenu1')
-        const fruitsVagetablesPage = await navigateCategory(afterLoginPage, Category.FruitsAndVegetables)
+        const fruitsPage = await navigateCategory(afterLoginPage, Category.Fruits)
+        const products = await listProducts(fruitsPage, Category.Vegetables)
+        console.log(products)
     } catch (error) {
+        console.error(error)
     } finally {
         browser.close()
     }
