@@ -1,3 +1,4 @@
+import { addToCart } from './add-to-cart'
 require('dotenv').config()
 import { login } from './login'
 import { navigateCategory } from './navigate-category'
@@ -26,6 +27,8 @@ const password = process.env.PASSWORD || ''
 
         const products = await listProducts(fruitsPage)
         console.log(products)
+
+        await addToCart(fruitsPage, [{ name: 'בננה' }])
     } catch (error) {
         console.error(error)
     } finally {

@@ -10,6 +10,6 @@ export interface Product {
 
 export interface ProductRequest {
     name: string
-    amount: number
+    amount?: number
     priceLimit?: number
 }
