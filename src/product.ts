@@ -1,4 +1,15 @@
+export enum Category {
+    Fruits = 'fruits',
+    Vegetables = 'vegetables',
+}
+
 export interface Product {
-    Name: string
-    Price: string
+    name: string
+    price: string
+}
+
+export interface ProductRequest {
+    name: string
+    amount: number
+    priceLimit?: number
 }

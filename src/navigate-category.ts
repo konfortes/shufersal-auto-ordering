@@ -1,5 +1,5 @@
 import { Page } from 'puppeteer'
-import { Category } from './category'
+import { Category } from './product'
 
 const fruitsAndVegetables = 'פירות, ירקות ופיצוחים'
 
@@ -22,6 +22,7 @@ const fruitsOrVegetablesPage = async (page: Page, category: Category): Promise<P
     await page.click(`a[href*="${paths[category]}"]`)
     await page.waitFor('#changeView')
     await page.screenshot({ path: 'example.png' })
+
     return page
 }
 
